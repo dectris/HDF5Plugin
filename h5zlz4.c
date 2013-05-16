@@ -160,7 +160,7 @@ static size_t lz4_filter(unsigned int flags, size_t cd_nelmts,
       
       free(*buf);
       *buf = outBuf;
-      
+      *buf_size = outSize;
       outBuf = NULL;
       ret_value = outSize;
       

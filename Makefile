@@ -1,5 +1,6 @@
 CFLAGS = -fPIC -g -O3 -std=c99
 CC = gcc
+# install directory of HDF5 1.8.11 #
 HDF5_INSTALL = /home/det/hdf5-1.8.11-snap16/hdf5/
 MAJOR = 0
 MINOR = 2
