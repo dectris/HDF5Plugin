@@ -1,0 +1,7 @@
+Compile:
+make
+#Set the env. variable HDF5_PLUGIN_PATH to the path where the compiled filter plugin is located:
+export HDF5_PLUGIN_PATH=/home/det/devel/github/HDF5Plugin/example/
+Run the program
+./PluginExample
+

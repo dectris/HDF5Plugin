@@ -40,7 +40,7 @@ static size_t lz4_filter(unsigned int flags, size_t cd_nelmts,
   if (flags & H5Z_FLAG_REVERSE)
     {
       const char* rpos = (char*)*buf; /* pointer to current read position */
-      char *roBuf = (char*)outBuf;   /* pointer to current write position */
+
       
       const uint64_t * const i64Buf = (uint64_t *) rpos;
       const uint64_t origSize = (uint64_t)(be64toht(*i64Buf));/* is saved in be format */
@@ -57,18 +57,17 @@ static size_t lz4_filter(unsigned int flags, size_t cd_nelmts,
 	  printf("cannot malloc\n");
 	  goto error;
 	}
-      
+      char *roBuf = (char*)outBuf;   /* pointer to current write position */      
       uint64_t decompSize     = 0;
       /// start with the first block ///
-      while(decompSize < origSize)
+           while(decompSize < origSize)
 	{
-	  
+
 	  if(origSize-decompSize < blockSize) /* the last block can be smaller than blockSize. */
 	    blockSize = origSize-decompSize;
 	  i32Buf = (uint32_t*)rpos;
 	  uint32_t compressedBlockSize =  be32toht(*i32Buf);  /// is saved in be format
 	  rpos += 4;
-	  
 	  if(compressedBlockSize == blockSize) /* there was no compression */
 	    {
 	      memcpy(roBuf, rpos, blockSize);
