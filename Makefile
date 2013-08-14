@@ -1,7 +1,7 @@
 CFLAGS = -fPIC -g -O3 -std=c99
 CC = gcc
 # install directory of HDF5 1.8.11 #
-HDF5_INSTALL = /home/det/hdf5-1.8.11-snap16/hdf5/
+HDF5_INSTALL = /home/det/hdf5-1.8.11/hdf5/
 MAJOR = 0
 MINOR = 2
 NAME1 = h5zlz4
@@ -20,7 +20,8 @@ lz4.o:
 
 
 lib$(NAME1).so.$(VERSION): $(NAME1).o lz4.o
-	$(CC) -shared -W1,soname,lib$(NAME1).so.$(MAJOR) $^ -o $@ 
+	#$(CC) -shared -Wl,soname,lib$(NAME1).so.$(MAJOR) $^ -o $@ 
+	$(CC) -shared  $^ -o $@ 
 	ln -sf lib$(NAME1).so.$(VERSION) lib$(NAME1).so
 	ln -sf lib$(NAME1).so.$(VERSION) lib$(NAME1).so.$(MAJOR)
 clean:

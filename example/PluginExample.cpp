@@ -33,8 +33,7 @@ int main(int argc, char* argv[])
     }
  
 
-  hsize_t dims[3];
-  dims = {nimages, IMG_DIMY,IMG_DIMX};         //N x X*Y
+  hsize_t dims[3] = {nimages, IMG_DIMY,IMG_DIMX};         //N x X*Y
   hsize_t  chunk[3] = {1, IMG_DIMY,IMG_DIMX};  // chunk is one image
   hsize_t  count[3] = {1, IMG_DIMY,IMG_DIMX};  // size of hyperslab: 1 chunk
   
