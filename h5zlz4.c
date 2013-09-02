@@ -18,8 +18,9 @@
 #include <Winsock2.h>
 #endif
 
-#define htonll(x) ( ( (uint64_t)(htonl( (uint32_t)((x << 32) >> 32) ))<< 32) | htonl( ((uint32_t)(x >> 32)) ))
-#define ntohll(x) ( ( (uint64_t)(ntohl( (uint32_t)((x << 32) >> 32) << 32) | ntohl( ((uint32_t)(x >> 32)) ) )))
+#define htonll(x) ( ( (uint64_t)(htonl( (uint32_t)((x << 32) >> 32)))<< 32) | htonl( ((uint32_t)(x >> 32)) ))
+#define ntohll(x) htonll(x)
+
 #define htobe16t(x) htons(x)
 #define htobe32t(x) htonl(x)
 #define htobe64t(x) htonll(x)
