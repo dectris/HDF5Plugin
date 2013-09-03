@@ -1,0 +1,52 @@
+Installation
+============
+
+1.) Build requirements
+    ------------------
+
+Currently only Linux is supported as a target platform.
+Building the LZ4 filter plugin requires
+.) cmake >= 2.6
+.) hdf5  >= 1.8.11
+
+and a recent gcc.
+
+2.) Building and installing the plugin
+    ----------------------------------
+
+2.1.) Build on Linux
+      --------------
+
+The filter plugin uses cmake for building. Thus the recommended procedure for
+building the code is to use an out-of-place build. 
+After downloading the source code (either via a tarball or from git) create
+somewhere a new directory 
+
+$> mkdir lz4-build
+
+and run cmake from within this directory, passing the path to the original
+source directory as the first argument
+
+$> cd lz4-build
+$> cmake /PATH/TO/LZ4/SOURCES
+
+Cmake will do all the configuration. Once the cmake run is finished a 
+
+$> make 
+
+and 
+
+$> make install 
+
+run will compile and install the filter plugin.
+
+To use the filter for your own programs you may have to add the installation
+directory of the plugin to the HDF5_PLUGIN_PATH.  
+
+2.2.) Build on Windows
+      ----------------
+NOT SUPPORTED YET
+
+2.3.) Build on OSX
+      ------------
+NOT SUPPORTED YET
