@@ -43,6 +43,10 @@ run will compile and install the filter plugin.
 To use the filter for your own programs you may have to add the installation
 directory of the plugin to the HDF5_PLUGIN_PATH.  
 
+To modify the install directory use the CMAKE_INSTALL_PREFIX for cmake
+
+$> cmake -DCMAKE_INSTALL_PREFIX=/usr/local
+
 2.2.) Build on Windows
       ----------------
 NOT SUPPORTED YET
