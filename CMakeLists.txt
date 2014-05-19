@@ -9,6 +9,8 @@ set(PATCH_VERSION "0")
 set(LIBRARY_VERSION "${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION}")
 set(SO_VERSION "0")
 
+set(PLUGIN_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/hdf5/plugins")
+
 add_definitions("-std=c99")
 
 include_directories("./include")
