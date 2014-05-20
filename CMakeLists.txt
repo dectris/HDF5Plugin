@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(LZ4-HDF5-Filter)
+project(hdf5-plugin-lz4)
 include(GNUInstallDirs)
 include(FindPkgConfig)
 
