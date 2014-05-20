@@ -8,5 +8,5 @@ set_target_properties(lz4module PROPERTIES
 
 #install code
 install(TARGETS lz4module LIBRARY 
-        DESTINATION "${CMAKE_INSTALL_LIBDIR}/hdf5/plugins")
+        DESTINATION ${PLUGIN_INSTALL_DIR})
 

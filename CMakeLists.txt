@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 2.6)
-include(GNUInstallDirs)
+cmake_minimum_required(VERSION 2.8)
 project(LZ4-HDF5-Filter)
+include(GNUInstallDirs)
 
 #================need to setup the version of the module=======================
 set(MAJOR_VERSION "0")
@@ -9,7 +9,7 @@ set(PATCH_VERSION "0")
 set(LIBRARY_VERSION "${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION}")
 set(SO_VERSION "0")
 
-set(PLUGIN_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/hdf5/plugins")
+set(PLUGIN_INSTALL_DIR "${CMAKE_INSTALL_FULL_LIBDIR}/hdf5/plugins")
 
 add_definitions("-std=c99")
 
