@@ -37,6 +37,7 @@ static size_t lz4_filter(unsigned int flags, size_t cd_nelmts,
 {
   void * outBuf = NULL;
   size_t ret_value;
+  uint32_t compBlockSize;
   
   if (flags & H5Z_FLAG_REVERSE)
     {
@@ -140,7 +141,7 @@ static size_t lz4_filter(unsigned int flags, size_t cd_nelmts,
 	  if(nbytes - origWritten < blockSize) /* the last block may be < blockSize */
 	    blockSize = nbytes - origWritten;
 	  
-	  uint32_t compBlockSize = LZ4_compress(rpos, roBuf+4, blockSize); /// reserve space for compBlockSize
+	   compBlockSize = LZ4_compress(rpos, roBuf+4, blockSize); /// reserve space for compBlockSize
 	  if(!compBlockSize)
 	    goto error;
 	  if(compBlockSize >= blockSize) /* compression did not save any space, do a memcpy instead */

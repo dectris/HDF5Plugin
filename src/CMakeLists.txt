@@ -6,6 +6,9 @@ set_target_properties(lz4module PROPERTIES
                       VERSION "${LIBRARY_VERSION}"
                       SOVERSION "${SO_VERSION}")
 
+if(CMAKE_HOST_WIN32)
+	target_link_libraries(lz4module ws2_32)
+endif()
 #install code
 install(TARGETS lz4module LIBRARY 
         DESTINATION ${PLUGIN_INSTALL_DIR})
